@@ -1,6 +1,6 @@
 {
   "Dedi": {
-    "loan": 800000,
+    "loan": 1000000,
     "months": [
       { "month": "Januari", "status": "Telat" },
       { "month": "Februari", "status": "Telat" },
