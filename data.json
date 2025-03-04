@@ -45,7 +45,7 @@
     ]
   },
   "pebri": {
-    "loan": 1000000,
+    "loan": 900000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
