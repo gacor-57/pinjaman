@@ -11,7 +11,7 @@
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "Lancar" }
+      { "month": "Oktober", "status": "" }
     ]
   },
   "Budi": {
@@ -26,7 +26,7 @@
       { "month": "Juli", "status": "Telat" },
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "Lancar" }
+      { "month": "Oktober", "status": "" }
     ]
   },
   "Caca": {
@@ -41,7 +41,7 @@
       { "month": "Juli", "status": "Telat" },
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "Lancar" }
+      { "month": "Oktober", "status": "" }
     ]
   },
   "pebri": {
@@ -56,7 +56,7 @@
       { "month": "Juli", "status": "Telat" },
       { "month": "Agustus", "status": "Telat" },
       { "month": "September", "status": "Telat" },
-      { "month": "Oktober", "status": "Lancar" }
+      { "month": "Oktober", "status": "" }
     ]
   }
 }
