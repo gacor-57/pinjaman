@@ -49,7 +49,7 @@
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
-      { "month": "Maret", "status": "Telat" },
+      { "month": "Maret", "status": "Lancar" },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Telat" },
       { "month": "Juni", "status": "Telat" },
