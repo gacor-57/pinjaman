@@ -1,50 +1,43 @@
 {
-  "Ahmad": {
-    "loan": 500000,
+  "Dedi": {
+    "loan": 800000,
     "months": [
-      { "month": "Januari", "status": "Lancar" },
+      { "month": "Januari", "status": "Telat" },
       { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Lancar" },
-      { "month": "April", "status": "Lancar" },
-      { "month": "Mei", "status": "Lancar" },
-      { "month": "Juni", "status": "Telat" },
-      { "month": "Juli", "status": "Lancar" }
-    ]
-  },
-  "Budi": {
-    "loan": 750000,
-    "months": [
-      { "month": "Januari", "status": "Lancar" },
-      { "month": "Februari", "status": "Lancar" },
       { "month": "Maret", "status": "Telat" },
-      { "month": "April", "status": "Lancar" },
+      { "month": "April", "status": "Lancar", "bayar_denda": true },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Lancar" },
-      { "month": "Juli", "status": "Telat" }
+      { "month": "Juli", "status": "Lancar" },
+      { "month": "Agustus", "status": "Lancar" },
+      { "month": "September", "status": "Lancar" },
+      { "month": "Oktober", "status": "Lancar" }
     ]
   },
-  "Caca": {
-    "loan": 1000000,
+  "Rina": {
+    "loan": 600000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Lancar" },
-      { "month": "April", "status": "Lancar" },
+      { "month": "Maret", "status": "Telat" },
+      { "month": "April", "status": "Lancar", "bayar_denda": false },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Lancar" },
-      { "month": "Juli", "status": "Telat" }
+      { "month": "Juli", "status": "Lancar" },
+      { "month": "Agustus", "status": "Telat" },
+      { "month": "September", "status": "Lancar", "bayar_denda": true },
+      { "month": "Oktober", "status": "Lancar" }
     ]
   },
-  "pebri": {
-    "loan": 900000,
+  "Siti": {
+    "loan": 550000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
       { "month": "Maret", "status": "Lancar" },
       { "month": "April", "status": "Lancar" },
-      { "month": "Mei", "status": "Telat" },
-      { "month": "Juni", "status": "Telat" },
-      { "month": "Juli", "status": "Telat" }
+      { "month": "Mei", "status": "Lancar" },
+      { "month": "Juni", "status": "Telat" }
     ]
   }
 }
