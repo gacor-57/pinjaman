@@ -32,11 +32,11 @@
     ]
   },
   "peminjam3": {
-    "loan": 1000000,
+    "loan": 500000,
     "months": [
       { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Lancar" },
-      { "month": "Februari", "status": "Telat" },
+      { "month": "Februari", "status": "Lancar" },
       { "month": "Maret", "status": "Lancar", "bayar_denda": true },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
