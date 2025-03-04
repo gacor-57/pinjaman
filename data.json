@@ -15,7 +15,7 @@
     ]
   },
   "Rina": {
-    "loan": 600000,
+    "loan": 1000000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Telat" },
