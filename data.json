@@ -11,7 +11,7 @@
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "Lancar", "bayar_denda": true },
+      { "month": "Oktober", "status": "Lancar", "bayar_denda": true }
     ]
   },
   "Rina": {
