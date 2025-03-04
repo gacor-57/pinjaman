@@ -30,7 +30,7 @@
     ]
   },
   "Siti": {
-    "loan": 550000,
+    "loan": 500000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
