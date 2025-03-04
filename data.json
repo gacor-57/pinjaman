@@ -19,7 +19,7 @@
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Lancar", "bayar_denda": false },
+      { "month": "Maret", "status": "Lancar", "bayar_denda": true },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Lancar", "bayar_denda": true },
