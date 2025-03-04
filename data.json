@@ -1,5 +1,5 @@
 {
-  "Dedi": {
+  "peminjam1": {
     "loan": 1000000,
     "months": [
       { "month": "Januari", "status": "Telat" },
@@ -14,7 +14,7 @@
       { "month": "Oktober", "status": "Lancar", "bayar_denda": true }
     ]
   },
-  "Rina": {
+  "peminjam2": {
     "loan": 1000000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
@@ -29,7 +29,7 @@
       { "month": "Oktober", "status": "Lancar" }
     ]
   },
-  "Siti": {
+  "peminjam3": {
     "loan": 500000,
     "months": [
       { "month": "Januari", "status": "Lancar" },
