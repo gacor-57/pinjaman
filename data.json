@@ -19,10 +19,10 @@
     "months": [
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Lancar", "bayar_denda": true },
+      { "month": "Maret", "status": "Lancar", "bayar_denda": false },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
-      { "month": "Juni", "status": "Lancar" },
+      { "month": "Juni", "status": "Lancar", "bayar_denda": true },
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Telat" },
       { "month": "September", "status": "Lancar", "bayar_denda": true },
