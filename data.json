@@ -8,10 +8,7 @@
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Telat" },
-      { "month": "Juli", "status": "Lancar" },
-      { "month": "Agustus", "status": "Lancar" },
-      { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "" }
+      { "month": "Juli", "status": "Lancar" }
     ]
   },
   "Budi": {
@@ -23,10 +20,7 @@
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Lancar" },
-      { "month": "Juli", "status": "Telat" },
-      { "month": "Agustus", "status": "Lancar" },
-      { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "" }
+      { "month": "Juli", "status": "Telat" }
     ]
   },
   "Caca": {
@@ -38,10 +32,7 @@
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
       { "month": "Juni", "status": "Lancar" },
-      { "month": "Juli", "status": "Telat" },
-      { "month": "Agustus", "status": "Lancar" },
-      { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "" }
+      { "month": "Juli", "status": "Telat" }
     ]
   },
   "pebri": {
@@ -53,10 +44,7 @@
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Telat" },
       { "month": "Juni", "status": "Telat" },
-      { "month": "Juli", "status": "Telat" },
-      { "month": "Agustus", "status": "Telat" },
-      { "month": "September", "status": "Telat" },
-      { "month": "Oktober", "status": "" }
+      { "month": "Juli", "status": "Telat" }
     ]
   }
 }
