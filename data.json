@@ -19,8 +19,8 @@
   "peminjam2": {
     "loan": 1000000,
     "months": [
-      { "month": "November", "status": "Telat" },
-      { "month": "Desember", "status": "Lancar", "bayar_denda": true },
+      { "month": "November", "status": "Lancar" },
+      { "month": "Desember", "status": "Lancar", "bayar_denda": false },
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
       { "month": "Maret", "status": "Lancar", "bayar_denda": true },
