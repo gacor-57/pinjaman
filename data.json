@@ -2,6 +2,7 @@
   "peminjam1": {
     "loan": 1000000,
     "months": [
+      { "month": "November", "status": "Lancar" },
       { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Telat" },
       { "month": "Februari", "status": "Telat" },
@@ -18,6 +19,7 @@
   "peminjam2": {
     "loan": 1000000,
     "months": [
+      { "month": "November", "status": "Telat" },
       { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
@@ -34,6 +36,7 @@
   "peminjam3": {
     "loan": 500000,
     "months": [
+      { "month": "November", "status": "Lancar" },
       { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
