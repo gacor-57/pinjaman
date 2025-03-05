@@ -13,20 +13,20 @@
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
-      { "month": "Oktober", "status": "Lancar", "bayar_denda": true }
+      { "month": "Oktober", "status": "Lancar" }
     ]
   },
   "peminjam2": {
     "loan": 1000000,
     "months": [
       { "month": "November", "status": "Lancar" },
-      { "month": "Desember", "status": "Lancar", "bayar_denda": false },
+      { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Telat" },
       { "month": "Maret", "status": "Lancar", "bayar_denda": true },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
-      { "month": "Juni", "status": "Lancar", "bayar_denda": true },
+      { "month": "Juni", "status": "Lancar" },
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Telat" },
       { "month": "September", "status": "Lancar", "bayar_denda": true },
@@ -40,10 +40,10 @@
       { "month": "Desember", "status": "Lancar" },
       { "month": "Januari", "status": "Lancar" },
       { "month": "Februari", "status": "Lancar" },
-      { "month": "Maret", "status": "Lancar", "bayar_denda": true },
+      { "month": "Maret", "status": "Lancar" },
       { "month": "April", "status": "Lancar" },
       { "month": "Mei", "status": "Lancar" },
-      { "month": "Juni", "status": "Lancar", "bayar_denda": true },
+      { "month": "Juni", "status": "Lancar" },
       { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Telat" },
       { "month": "September", "status": "Lancar", "bayar_denda": true },
@@ -51,3 +51,4 @@
     ]
   }
 }
+
