@@ -3,7 +3,7 @@
     "loan": 1000000,
     "months": [
       { "month": "November", "status": "Lancar" },
-      { "month": "Desember", "status": "Lancar" },
+      { "month": "Desember", "status": "Telat" },
       { "month": "Januari", "status": "Telat" },
       { "month": "Februari", "status": "Telat" },
       { "month": "Maret", "status": "Lancar" },
