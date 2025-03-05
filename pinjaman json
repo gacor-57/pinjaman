@@ -1,0 +1,18 @@
+[
+    {
+        "nama": "Andi",
+        "pinjaman": 1000000,
+        "angsuran": 1200000,
+        "status": "lancar",
+        "denda": 0,
+        "totalBayar": 1200000
+    },
+    {
+        "nama": "Budi",
+        "pinjaman": 2000000,
+        "angsuran": 2400000,
+        "status": "telat",
+        "denda": 1200000,
+        "totalBayar": 3600000
+    }
+]
