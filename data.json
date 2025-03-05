@@ -17,7 +17,7 @@
     ]
   },
   "peminjam2": {
-    "loan": 1000000,
+    "loan": 1500000,
     "months": [
       { "month": "November", "status": "Lancar" },
       { "month": "Desember", "status": "Lancar" },
