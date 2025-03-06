@@ -6,7 +6,7 @@
       { "month": "Agustus", "status": "Lancar" },
       { "month": "September", "status": "Lancar" },
       { "month": "Oktober", "status": "Lancar" },
-      { "month": "November", "status": "Telat" },
+      { "month": "November", "status": "Lancar" },
       { "month": "Desember", "status": "Telat" },
       { "month": "Januari", "status": "Telat" },
       { "month": "Februari", "status": "Lancar", "bayar_denda": false },
