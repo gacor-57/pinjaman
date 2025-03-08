@@ -121,13 +121,6 @@
 
 
 
-    function scrambleText(text) {
-      return text.split('').reverse().join('');
-    }
-
-
-
-
 
 
 
@@ -145,18 +138,7 @@
 
 
 
-
-
-
-
-        let scrambledData = scrambleText(decodedContent); // Mengacak data sebelum digunakan
-        globalData = JSON.parse(scrambledData.split('').reverse().join('')); // Kembalikan ke bentuk asli
-
-
-
-
-
-        // globalData = JSON.parse(decodedContent);
+        globalData = JSON.parse(decodedContent);
         renderSummary();
       } catch (error) {
         console.error("Gagal mengambil data:", error);
