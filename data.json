@@ -9,8 +9,8 @@
       { "month": "November", "status": "Telat" },
       { "month": "Desember", "status": "Telat" },
       { "month": "Januari", "status": "Telat" },
-      { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Telat" },
+      { "month": "Februari", "status": "Telat", "bayar_denda": false },
+      { "month": "Maret", "status": "Telat", "bayar_denda": false },
       { "month": "April", "status": "Telat" },
       { "month": "Mei", "status": "Lancar", "bayar_denda": false },
       { "month": "Juni", "status": "Lancar", "bayar_denda": false }
