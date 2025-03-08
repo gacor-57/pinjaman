@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Pinjaman Karang Taruna WHE-U</title>
+  <style>
+    /* Background image dengan overlay transparan */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      position: relative;
+      z-index: 1;
+      background: #f0f0f0;
+    }
+    body::before {
+      content: "";
+      background: url('https://raw.githubusercontent.com/gacor-57/pinjaman/refs/heads/main/20250306_032437.jpg') no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    /* Judul di tengah */
+    h1 {
+      text-align: center;
+      color: #666;
+      margin-bottom: 0.1px;
+      font-size:0.9em;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 0.1px;
+    }
+    /* Gaya tabel */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: #fff;
+    }
+    /* Gaya tombol */
+    button {
+      padding: 5px 10px;
+      margin: 5px 0;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tampilan Summary -->
+  <div id="summaryView">
+    <h2>Daftar Pinjaman Karang Taruna</h2>
+    <h2>WHE-U</h2>
+    <h1>الادخار والقروض ليست عادة</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Peminjam</th>
+          <th>Jumlah Pinjaman</th>
+          <th>Angsuran per Bulan</th>
+          <th>Total Denda</th>
+          <th>Rincian</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-summary"></tbody>
+    </table>
+  </div>
+
+  <!-- Tampilan Detail -->
+  <div id="detailView" class="hidden">
+    <h2 id="judulDetail"></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bulan</th>
+          <th>Angsuran</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-detail"></tbody>
+    </table>
+    <p id="uangMasuk"></p>
+    <p id="result"></p>
+    <p id="totalDenda"></p>
+    <!-- Elemen untuk menampilkan total biaya pelunasan denda dan angsuran belum dibayar -->
+    <p id="totalBiaya"></p>
+    <button onclick="backToSummary()">Kembali</button>
+  </div>
+
+  <script>
+
+    
+
+
+
+
+
+    function scrambleText(text) {
+      return text.split('').reverse().join('');
+    }
+
+
+
+
+
+
+
+
+    let globalData = {}; // Menyimpan data JSON yang diambil
+
+    // Fungsi mengambil data dari GitHub API
+    async function fetchData() {
+      const url = "https://api.github.com/repos/gacor-57/pinjaman/contents/data.json";
+      try {
+        let response = await fetch(url, { cache: "no-store" });
+        let data = await response.json();
+        // Hapus newline agar base64 dapat didekode dengan benar
+        let decodedContent = atob(data.content.replace(/\n/g, ""));
+
+
+
+
+
+
+
+        let scrambledData = scrambleText(decodedContent); // Mengacak data sebelum digunakan
+        globalData = JSON.parse(scrambledData.split('').reverse().join('')); // Kembalikan ke bentuk asli
+
+
+
+
+
+        // globalData = JSON.parse(decodedContent);
+        renderSummary();
+      } catch (error) {
+        console.error("Gagal mengambil data:", error);
+        document.getElementById("tabel-summary").innerHTML = "<tr><td colspan='5'>Gagal memuat data. Periksa koneksi dan coba lagi.</td></tr>";
+      }
+    }
+
+    // Fungsi filter bulan: dari bulan pertama installment sampai bulan saat ini
+    function getFilteredMonths(monthsArray) {
+      const monthNames = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+      const currentMonthIndex = new Date().getMonth(); // (0-11)
+      let filtered = [];
+      for (let i = 0; i < monthsArray.length; i++) {
+        let mIndex = monthNames.indexOf(monthsArray[i].month);
+        if (mIndex === -1) continue;
+        filtered.push(monthsArray[i]);
+        if (mIndex === currentMonthIndex) break;
+      }
+      return filtered;
+    }
+
+    // Render tampilan Summary (daftar peminjam)
+    function renderSummary() {
+      const tbody = document.getElementById("tabel-summary");
+      tbody.innerHTML = "";
+      Object.keys(globalData).forEach(key => {
+        const borrower = globalData[key];
+        // Total pinjaman = loan * 1.2, installment = total/10, penaltyPerMonth = installment/2
+        let totalPinjaman = borrower.loan * 1.2;
+        let installment = totalPinjaman / 10;
+        let penaltyPerMonth = installment / 2;
+
+        // Hitung sisa denda (penaltyOutstanding) dari bulan pertama sampai bulan berjalan
+        let penaltyOutstanding = 0;
+        let filteredMonths = getFilteredMonths(borrower.months);
+        filteredMonths.forEach(m => {
+          if (m.status === "Telat") {
+            penaltyOutstanding += penaltyPerMonth;
+          } else if (m.status === "Lancar" && m.hasOwnProperty("bayar_denda")) {
+            if (m.bayar_denda === true) {
+              penaltyOutstanding = 0;
+            }
+          }
+        });
+
+        let row = `<tr>
+                     <td>${key}</td>
+                     <td>Rp ${borrower.loan.toLocaleString()}</td>
+                     <td>Rp ${installment.toLocaleString()}</td>
+                     <td>Rp ${penaltyOutstanding.toLocaleString()}</td>
+                     <td><button onclick="showDetail('${key}')">Lihat Detail</button></td>
+                   </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+
+    // Render tampilan Detail untuk satu peminjam dengan perbaikan logika lunas
+    function showDetail(userKey) {
+      const borrower = globalData[userKey];
+      if (!borrower) return;
+
+      document.getElementById("summaryView").classList.add("hidden");
+      document.getElementById("detailView").classList.remove("hidden");
+      document.getElementById("judulDetail").innerText = userKey;
+
+      const tbody = document.getElementById("tabel-detail");
+      tbody.innerHTML = "";
+
+      let totalPinjaman = borrower.loan * 1.2;
+      let installment = totalPinjaman / 10;
+      let penaltyPerMonth = installment / 2;
+      let penaltyOutstanding = 0;
+      let totalUnpaidInstallment = 0; // Angsuran yang belum dibayar (bulan Telat)
+      let uangMasukBulanIni = 0; // Uang masuk pada bulan terakhir
+      let lunas = false; // Flag untuk menandai pelunasan denda
+
+      let filteredMonths = getFilteredMonths(borrower.months);
+      filteredMonths.forEach(m => {
+        let displayAngsuran = "";
+        let statusText = "";
+
+        // Jika sudah lunas, tidak perlu menambahkan denda atau angsuran yang belum dibayar
+        if (lunas) {
+          displayAngsuran = "Rp " + installment.toLocaleString();
+          statusText = "Lunas";
+          uangMasukBulanIni = installment;
+        } else if (m.status === "Telat") {
+          displayAngsuran = "-";
+          statusText = "Telat";
+          uangMasukBulanIni = 0;
+          penaltyOutstanding += penaltyPerMonth;
+          totalUnpaidInstallment += installment;
+        } else if (m.status === "Lancar" && m.hasOwnProperty("bayar_denda")) {
+          if (m.bayar_denda === true) {
+            // Pada bulan ini, peminjam membayar angsuran + seluruh denda tertunggak
+
+
+            
+
+
+            let bayarTotal = installment + totalUnpaidInstallment + penaltyOutstanding;
+            displayAngsuran = "Rp " + bayarTotal.toLocaleString();
+            statusText = "Angsuran + Denda";
+            uangMasukBulanIni = bayarTotal;
+            penaltyOutstanding = 0; // reset denda karena sudah lunas
+            totalUnpaidInstallment = 0; // reset angsuran tertunggak karena juga telah dilunasi
+            lunas = true;       // set flag agar bulan selanjutnya tidak menambah denda
+          } else {
+            displayAngsuran = "Rp " + installment.toLocaleString();
+            statusText = "Angsuran belum termasuk Denda";
+            uangMasukBulanIni = installment;
+          }
+        } else if (m.status === "Lancar") {
+          displayAngsuran = "Rp " + installment.toLocaleString();
+          statusText = "Lancar";
+          uangMasukBulanIni = installment;
+        }
+        
+        let row = `<tr>
+                     <td>${m.month}</td>
+                     <td>${displayAngsuran}</td>
+                     <td>${statusText}</td>
+                   </tr>`;
+        tbody.innerHTML += row;
+      });
+
+      document.getElementById("uangMasuk").innerText = "Uang Masuk bulan ini: Rp " + uangMasukBulanIni.toLocaleString();
+      document.getElementById("result").innerText = "Denda Default: Rp " + penaltyPerMonth.toLocaleString();
+      document.getElementById("totalDenda").innerText = "Total Denda Belum Dibayar: Rp " + penaltyOutstanding.toLocaleString();
+
+      // Total biaya pelunasan adalah jumlah dari denda dan angsuran yang belum dibayar
+      let totalBiaya = penaltyOutstanding + totalUnpaidInstallment;
+      document.getElementById("totalBiaya").innerText = "Total pelunasan denda + angsuran: Rp " + totalBiaya.toLocaleString();
+    }
+
+    // Kembali ke tampilan Summary
+    function backToSummary() {
+      document.getElementById("detailView").classList.add("hidden");
+      document.getElementById("summaryView").classList.remove("hidden");
+    }
+
+    // Inisialisasi ambil data
+    fetchData();
+  </script>
+</body>
+</html>
