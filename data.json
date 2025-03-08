@@ -1,4 +1,21 @@
 {
+  "ardi": {
+    "loan": 2000000,
+    "months": [
+      { "month": "Juli", "status": "Telat" },
+      { "month": "Agustus", "status": "Telat" },
+      { "month": "September", "status": "Telat" },
+      { "month": "Oktober", "status": "Telat" },
+      { "month": "November", "status": "Telat" },
+      { "month": "Desember", "status": "Telat" },
+      { "month": "Januari", "status": "Telat" },
+      { "month": "Februari", "status": "Telat" },
+      { "month": "Maret", "status": "Telat" },
+      { "month": "April", "status": "Telat" },
+      { "month": "Mei", "status": "Lancar", "bayar_denda": false },
+      { "month": "Juni", "status": "Lancar", "bayar_denda": false }
+    ]
+  },
   "pebri": {
     "loan": 1000000,
     "months": [
