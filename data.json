@@ -2,10 +2,10 @@
   "ardi": {
     "loan": 2000000,
     "months": [
-      { "month": "Juli", "status": "Telat" },
+      { "month": "Juli", "status": "Lancar" },
       { "month": "Agustus", "status": "Telat" },
       { "month": "September", "status": "Telat" },
-      { "month": "Oktober", "status": "Telat" },
+      { "month": "Oktober", "status": "Lancar", "bayar_denda": true },
       { "month": "November", "status": "Telat" },
       { "month": "Desember", "status": "Telat" },
       { "month": "Januari", "status": "Telat" },
@@ -71,17 +71,17 @@
     "loan": 1000000,
     "months": [
       { "month": "Juli", "status": "Lancar" },
-      { "month": "Agustus", "status": "Telat" },
-      { "month": "September", "status": "Telat" },
-      { "month": "Oktober", "status": "Telat" },
-      { "month": "November", "status": "Telat" },
-      { "month": "Desember", "status": "Telat" },
-      { "month": "Januari", "status": "Telat" },
-      { "month": "Februari", "status": "Telat" },
-      { "month": "Maret", "status": "Telat" },
-      { "month": "April", "status": "Telat" },
-      { "month": "Mei", "status": "Telat" },
-      { "month": "Juni", "status": "Telat" }
+      { "month": "Agustus", "status": "Lancar" },
+      { "month": "September", "status": "Lancar" },
+      { "month": "Oktober", "status": "Lancar" },
+      { "month": "November", "status": "Lancar" },
+      { "month": "Desember", "status": "Lancar" },
+      { "month": "Januari", "status": "Lancar" },
+      { "month": "Februari", "status": "Lancar" },
+      { "month": "Maret", "status": "Lancar" },
+      { "month": "April", "status": "Lancar" },
+      { "month": "Mei", "status": "Lancar" },
+      { "month": "Juni", "status": "Lancar" }
     ]
   },
   "paimen": {
